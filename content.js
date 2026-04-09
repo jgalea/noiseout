@@ -221,6 +221,13 @@
   window.addEventListener('popstate', checkUrlChange);
   setInterval(checkUrlChange, 500);
 
+  // Background tabs throttle setTimeout to ~1Hz, so the MutationObserver
+  // debounce can stall and miss late-loading sections. Run finders on a
+  // steady 1s interval regardless, which survives throttling.
+  setInterval(function () {
+    if (currentToggles) runFinders(currentToggles);
+  }, 1000);
+
   // Install the visibility blocker as early as possible to prevent the flash.
   installBlocker();
 

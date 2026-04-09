@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=380">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <span class="title">NoiseOut</span>
+    <label class="switch master">
+      <input type="checkbox" id="masterToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="searchInput" placeholder="Search toggles…" autocomplete="off">
+    <button type="button" id="resetBtn" title="Reset all toggles to defaults">Reset</button>
+  </div>
+
+  <div id="toggleContainer" class="toggles"></div>
+
+  <div class="footer">
+    <span id="activeCount">0 active</span>
+    <div class="footer-actions">
+      <button type="button" id="importBtn" title="Import settings from a JSON file">Import</button>
+      <button type="button" id="exportBtn" title="Copy settings JSON to clipboard">Export</button>
+    </div>
+    <span class="version">v1.0.0</span>
+  </div>
+  <div id="toast" class="toast"></div>
+  <input type="file" id="importFile" accept="application/json,.json" style="display:none">
+
+  <script src="selectors.js"></script>
+  <script src="presets.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

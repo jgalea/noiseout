@@ -3,4 +3,5 @@
 *.crx
 *.pem
 .playwright-mcp/
+.claude/
 docs/

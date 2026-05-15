@@ -1,7 +1,0 @@
-.superpowers/
-.DS_Store
-*.crx
-*.pem
-.playwright-mcp/
-.claude/
-docs/
